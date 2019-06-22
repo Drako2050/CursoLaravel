@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?><Diagram version="1.0" type="MySQL" versionMajor="5" versionMinor="7" groupSchema="false" hide_inv="false">
+<Table id="0" name="libro" schema="" database="biblioteca" background="16777165">
+<Column id="1" name="id" type="int" length="0" nulls="false">
+<CP name="PRECISION">11</CP>
+<CP name="IDENTITY">NO</CP>
+<CP name="UNSIGNED">NO</CP>
+<CP name="ZERO_FILL">NO</CP>
+</Column>
+<Column id="2" name="titulo" type="varchar" length="100" nulls="true"/>
+<Column id="3" name="isbn" type="varchar" length="30" nulls="true"/>
+<Column id="4" name="autor" type="varchar" length="100" nulls="true"/>
+<Column id="5" name="cantidad" type="tinyint" length="0" nulls="true">
+<CP name="PRECISION">4</CP>
+<CP name="IDENTITY">NO</CP>
+<CP name="UNSIGNED">NO</CP>
+<CP name="ZERO_FILL">NO</CP>
+</Column>
+<Column id="6" name="editorial" type="varchar" length="50" nulls="true"/>
+<Column id="7" name="foto" type="varchar" length="100" nulls="true"/>
+<Storage name="Compression" value="false"/>
+<Storage name="ValueCompression" value="false"/>
+<Storage name="DistributeRandom" value="false"/>
+<Storage name="NoLogging" value="false"/>
+<Storage name="Hana_Logging" value="false"/>
+<Storage name="Encrypted" value="false"/>
+<Storage name="WithCRCols" value="false"/>
+<Storage name="automerge" value="false"/>
+<Storage name="schemaflexibiltiy" value="false"/>
+<Storage name="TDNoPrimaryIndex" value="false"/>
+<Storage name="transferTable" value="false"/>
+<Storage name="Autoincrement" value="0"/>
+<Storage name="db2zVolatile" value="false"/>
+<Storage name="seriesequidistantmissingelement" value="false"/>
+<Storage name="db2zRestrictOnDrop" value="false"/>
+<Storage name="series" value="false"/>
+<Storage name="AppendMode" value="false"/>
+<Storage name="External" value="false"/>
+<Storage name="InterleavedSortKey" value="false"/>
+<Storage name="Capped" value="false"/>
+<Storage name="Engine" value="InnoDB"/>
+<Storage name="seriesequidistant" value="false"/>
+</Table>
+<Table id="8" name="libro_prestamo" schema="" database="biblioteca" background="16777165">
+<Column id="9" name="id" type="int" length="0" nulls="false">
+<CP name="PRECISION">11</CP>
+<CP name="IDENTITY">NO</CP>
+<CP name="UNSIGNED">NO</CP>
+<CP name="ZERO_FILL">NO</CP>
+</Column>
+<Column id="10" name="usuario_id" type="int" length="0" nulls="true">
+<CP name="PRECISION">11</CP>
+<CP name="IDENTITY">NO</CP>
+<CP name="UNSIGNED">NO</CP>
+<CP name="ZERO_FILL">NO</CP>
+</Column>
+<Column id="11" name="libro_id" type="int" length="0" nulls="true">
+<CP name="PRECISION">11</CP>
+<CP name="IDENTITY">NO</CP>
+<CP name="UNSIGNED">NO</CP>
+<CP name="ZERO_FILL">NO</CP>
+</Column>
+<Column id="12" name="fecha_prestamo" type="date" length="0" nulls="true"/>
+<Column id="13" name="prestado_a" type="varchar" length="100" nulls="true"/>
+<Column id="14" name="estado" type="tinyint" length="0" nulls="true">
+<CP name="PRECISION">4</CP>
+<CP name="IDENTITY">NO</CP>
+<CP name="UNSIGNED">NO</CP>
+<CP name="ZERO_FILL">NO</CP>
+</Column>
+<Column id="15" name="fecha_devolucion" type="date" length="0" nulls="true"/>
+<Storage name="Compression" value="false"/>
+<Storage name="ValueCompression" value="false"/>
+<Storage name="DistributeRandom" value="false"/>
+<Storage name="NoLogging" value="false"/>
+<Storage name="Hana_Logging" value="false"/>
+<Storage name="Encrypted" value="false"/>
+<Storage name="WithCRCols" value="false"/>
+<Storage name="automerge" value="false"/>
+<Storage name="schemaflexibiltiy" value="false"/>
+<Storage name="TDNoPrimaryIndex" value="false"/>
+<Storage name="transferTable" value="false"/>
+<Storage name="Autoincrement" value="0"/>
+<Storage name="db2zVolatile" value="false"/>
+<Storage name="seriesequidistantmissingelement" value="false"/>
+<Storage name="db2zRestrictOnDrop" value="false"/>
+<Storage name="series" value="false"/>
+<Storage name="AppendMode" value="false"/>
+<Storage name="External" value="false"/>
+<Storage name="InterleavedSortKey" value="false"/>
+<Storage name="Capped" value="false"/>
+<Storage name="Engine" value="InnoDB"/>
+<Storage name="seriesequidistant" value="false"/>
+</Table>
+<Table id="16" name="permiso" schema="" database="biblioteca" background="16777165">
+<Column id="17" name="id" type="int" length="0" nulls="false">
+<CP name="PRECISION">11</CP>
+<CP name="IDENTITY">NO</CP>
+<CP name="UNSIGNED">NO</CP>
+<CP name="ZERO_FILL">NO</CP>
+<CP name="COMMENTS">id primary</CP>
+</Column>
+<Column id="18" name="nombre" type="varchar" length="50" nulls="true"/>
+<Column id="19" name="slug" type="varchar" length="50" nulls="true"/>
+<Storage name="Compression" value="false"/>
+<Storage name="ValueCompression" value="false"/>
+<Storage name="DistributeRandom" value="false"/>
+<Storage name="NoLogging" value="false"/>
+<Storage name="Hana_Logging" value="false"/>
+<Storage name="Encrypted" value="false"/>
+<Storage name="WithCRCols" value="false"/>
+<Storage name="automerge" value="false"/>
+<Storage name="schemaflexibiltiy" value="false"/>
+<Storage name="TDNoPrimaryIndex" value="false"/>
+<Storage name="transferTable" value="false"/>
+<Storage name="Autoincrement" value="0"/>
+<Storage name="db2zVolatile" value="false"/>
+<Storage name="seriesequidistantmissingelement" value="false"/>
+<Storage name="db2zRestrictOnDrop" value="false"/>
+<Storage name="series" value="false"/>
+<Storage name="AppendMode" value="false"/>
+<Storage name="External" value="false"/>
+<Storage name="InterleavedSortKey" value="false"/>
+<Storage name="Capped" value="false"/>
+<Storage name="Engine" value="InnoDB"/>
+<Storage name="seriesequidistant" value="false"/>
+</Table>
+<Table id="20" name="permiso_rol" schema="" database="biblioteca" background="16777165">
+<Column id="21" name="id" type="int" length="0" nulls="false">
+<CP name="PRECISION">11</CP>
+<CP name="IDENTITY">NO</CP>
+<CP name="UNSIGNED">NO</CP>
+<CP name="ZERO_FILL">NO</CP>
+</Column>
+<Column id="22" name="rol_id" type="int" length="0" nulls="true">
+<CP name="PRECISION">11</CP>
+<CP name="IDENTITY">NO</CP>
+<CP name="UNSIGNED">NO</CP>
+<CP name="ZERO_FILL">NO</CP>
+</Column>
+<Column id="23" name="permiso_id" type="int" length="0" nulls="true">
+<CP name="PRECISION">11</CP>
+<CP name="IDENTITY">NO</CP>
+<CP name="UNSIGNED">NO</CP>
+<CP name="ZERO_FILL">NO</CP>
+</Column>
+<Storage name="Compression" value="false"/>
+<Storage name="ValueCompression" value="false"/>
+<Storage name="DistributeRandom" value="false"/>
+<Storage name="NoLogging" value="false"/>
+<Storage name="Hana_Logging" value="false"/>
+<Storage name="Encrypted" value="false"/>
+<Storage name="WithCRCols" value="false"/>
+<Storage name="automerge" value="false"/>
+<Storage name="schemaflexibiltiy" value="false"/>
+<Storage name="TDNoPrimaryIndex" value="false"/>
+<Storage name="transferTable" value="false"/>
+<Storage name="Autoincrement" value="0"/>
+<Storage name="db2zVolatile" value="false"/>
+<Storage name="seriesequidistantmissingelement" value="false"/>
+<Storage name="db2zRestrictOnDrop" value="false"/>
+<Storage name="series" value="false"/>
+<Storage name="AppendMode" value="false"/>
+<Storage name="External" value="false"/>
+<Storage name="InterleavedSortKey" value="false"/>
+<Storage name="Capped" value="false"/>
+<Storage name="Engine" value="InnoDB"/>
+<Storage name="seriesequidistant" value="false"/>
+</Table>
+<Table id="24" name="rol" schema="" database="biblioteca" background="16777165">
+<Column id="25" name="id" type="int" length="0" nulls="false">
+<CP name="PRECISION">11</CP>
+<CP name="IDENTITY">NO</CP>
+<CP name="UNSIGNED">NO</CP>
+<CP name="ZERO_FILL">NO</CP>
+</Column>
+<Column id="26" name="nombre" type="varchar" length="50" nulls="true"/>
+<Storage name="Compression" value="false"/>
+<Storage name="ValueCompression" value="false"/>
+<Storage name="DistributeRandom" value="false"/>
+<Storage name="NoLogging" value="false"/>
+<Storage name="Hana_Logging" value="false"/>
+<Storage name="Encrypted" value="false"/>
+<Storage name="WithCRCols" value="false"/>
+<Storage name="automerge" value="false"/>
+<Storage name="schemaflexibiltiy" value="false"/>
+<Storage name="TDNoPrimaryIndex" value="false"/>
+<Storage name="transferTable" value="false"/>
+<Storage name="Autoincrement" value="0"/>
+<Storage name="db2zVolatile" value="false"/>
+<Storage name="seriesequidistantmissingelement" value="false"/>
+<Storage name="db2zRestrictOnDrop" value="false"/>
+<Storage name="series" value="false"/>
+<Storage name="AppendMode" value="false"/>
+<Storage name="External" value="false"/>
+<Storage name="InterleavedSortKey" value="false"/>
+<Storage name="Capped" value="false"/>
+<Storage name="Engine" value="InnoDB"/>
+<Storage name="seriesequidistant" value="false"/>
+</Table>
+<Table id="27" name="usuario" schema="" database="biblioteca" background="16777165">
+<Column id="28" name="id" type="int" length="0" nulls="false">
+<CP name="PRECISION">11</CP>
+<CP name="IDENTITY">NO</CP>
+<CP name="UNSIGNED">NO</CP>
+<CP name="ZERO_FILL">NO</CP>
+</Column>
+<Column id="29" name="usuario" type="varchar" length="50" nulls="true"/>
+<Column id="30" name="password" type="varchar" length="50" nulls="true"/>
+<Column id="31" name="nombre" type="varchar" length="50" nulls="true"/>
+<Storage name="Compression" value="false"/>
+<Storage name="ValueCompression" value="false"/>
+<Storage name="DistributeRandom" value="false"/>
+<Storage name="NoLogging" value="false"/>
+<Storage name="Hana_Logging" value="false"/>
+<Storage name="Encrypted" value="false"/>
+<Storage name="WithCRCols" value="false"/>
+<Storage name="automerge" value="false"/>
+<Storage name="schemaflexibiltiy" value="false"/>
+<Storage name="TDNoPrimaryIndex" value="false"/>
+<Storage name="transferTable" value="false"/>
+<Storage name="Autoincrement" value="0"/>
+<Storage name="db2zVolatile" value="false"/>
+<Storage name="seriesequidistantmissingelement" value="false"/>
+<Storage name="db2zRestrictOnDrop" value="false"/>
+<Storage name="series" value="false"/>
+<Storage name="AppendMode" value="false"/>
+<Storage name="External" value="false"/>
+<Storage name="InterleavedSortKey" value="false"/>
+<Storage name="Capped" value="false"/>
+<Storage name="Engine" value="InnoDB"/>
+<Storage name="seriesequidistant" value="false"/>
+</Table>
+<Table id="32" name="usuario_rol" schema="" database="biblioteca" background="16777165">
+<Column id="33" name="id" type="int" length="0" nulls="false">
+<CP name="PRECISION">11</CP>
+<CP name="IDENTITY">NO</CP>
+<CP name="UNSIGNED">NO</CP>
+<CP name="ZERO_FILL">NO</CP>
+</Column>
+<Column id="34" name="rol_id" type="int" length="0" nulls="true">
+<CP name="PRECISION">11</CP>
+<CP name="IDENTITY">NO</CP>
+<CP name="UNSIGNED">NO</CP>
+<CP name="ZERO_FILL">NO</CP>
+</Column>
+<Column id="35" name="usuario_id" type="int" length="0" nulls="true">
+<CP name="PRECISION">11</CP>
+<CP name="IDENTITY">NO</CP>
+<CP name="UNSIGNED">NO</CP>
+<CP name="ZERO_FILL">NO</CP>
+</Column>
+<Column id="36" name="estado" type="tinyint" length="0" nulls="true">
+<CP name="PRECISION">4</CP>
+<CP name="IDENTITY">NO</CP>
+<CP name="UNSIGNED">NO</CP>
+<CP name="ZERO_FILL">NO</CP>
+</Column>
+<Storage name="Compression" value="false"/>
+<Storage name="ValueCompression" value="false"/>
+<Storage name="DistributeRandom" value="false"/>
+<Storage name="NoLogging" value="false"/>
+<Storage name="Hana_Logging" value="false"/>
+<Storage name="Encrypted" value="false"/>
+<Storage name="WithCRCols" value="false"/>
+<Storage name="automerge" value="false"/>
+<Storage name="schemaflexibiltiy" value="false"/>
+<Storage name="TDNoPrimaryIndex" value="false"/>
+<Storage name="transferTable" value="false"/>
+<Storage name="Autoincrement" value="0"/>
+<Storage name="db2zVolatile" value="false"/>
+<Storage name="seriesequidistantmissingelement" value="false"/>
+<Storage name="db2zRestrictOnDrop" value="false"/>
+<Storage name="series" value="false"/>
+<Storage name="AppendMode" value="false"/>
+<Storage name="External" value="false"/>
+<Storage name="InterleavedSortKey" value="false"/>
+<Storage name="Capped" value="false"/>
+<Storage name="Engine" value="InnoDB"/>
+<Storage name="seriesequidistant" value="false"/>
+</Table>
+<Relation id="37" name="REL_2" cardinality="-2" identifying="false" nulls="false">
+<Option name="onDelete" class="String" value="RESTRICT"/>
+<Option name="onUpdate" class="String" value="RESTRICT"/>
+<FK>28</FK>
+<PK>10</PK>
+<Text/>
+</Relation>
+<Relation id="38" name="REL_1" cardinality="-2" identifying="false" nulls="false">
+<Option name="onDelete" class="String" value="RESTRICT"/>
+<Option name="onUpdate" class="String" value="RESTRICT"/>
+<FK>1</FK>
+<PK>11</PK>
+<Text/>
+</Relation>
+<Relation id="39" name="REL_6" cardinality="-2" identifying="false" nulls="false">
+<Option name="onDelete" class="String" value="RESTRICT"/>
+<Option name="onUpdate" class="String" value="RESTRICT"/>
+<FK>17</FK>
+<PK>23</PK>
+<Text/>
+</Relation>
+<Relation id="40" name="REL_4" cardinality="-2" identifying="false" nulls="false">
+<Option name="onDelete" class="String" value="RESTRICT"/>
+<Option name="onUpdate" class="String" value="RESTRICT"/>
+<FK>25</FK>
+<PK>34</PK>
+<Text/>
+</Relation>
+<Relation id="41" name="REL_3" cardinality="-2" identifying="false" nulls="false">
+<FK>28</FK>
+<PK>35</PK>
+<Text/>
+</Relation>
+<Relation id="42" name="REL_5" cardinality="-2" identifying="false" nulls="false">
+<FK>25</FK>
+<PK>22</PK>
+<Text/>
+</Relation>
+<Index table="8" name="FK_USUARIO" schema="" database="biblioteca">
+<Option name="type" class="String" value="BTREE"/>
+<IndexColumn id="10" sequence="0" ascending="true"/>
+</Index>
+<Index table="8" name="FK_LIBRO" schema="" database="biblioteca">
+<Option name="type" class="String" value="BTREE"/>
+<IndexColumn id="11" sequence="0" ascending="true"/>
+</Index>
+<Index table="20" name="FK_PERMISO" schema="" database="biblioteca">
+<Option name="type" class="String" value="BTREE"/>
+<IndexColumn id="23" sequence="0" ascending="true"/>
+</Index>
+<Index table="32" name="FK_ROL" schema="" database="biblioteca">
+<Option name="type" class="String" value="BTREE"/>
+<IndexColumn id="34" sequence="0" ascending="true"/>
+</Index>
+<Constraint table="0" name="PRIMARY" type="PrimKey">
+<ConstraintColumn id="1"/>
+</Constraint>
+<Constraint table="8" name="PRIMARY" type="PrimKey">
+<ConstraintColumn id="9"/>
+</Constraint>
+<Constraint table="16" name="PRIMARY" type="PrimKey">
+<ConstraintColumn id="17"/>
+</Constraint>
+<Constraint table="20" name="PRIMARY" type="PrimKey">
+<ConstraintColumn id="21"/>
+</Constraint>
+<Constraint table="24" name="PRIMARY" type="PrimKey">
+<ConstraintColumn id="25"/>
+</Constraint>
+<Constraint table="27" name="PRIMARY" type="PrimKey">
+<ConstraintColumn id="28"/>
+</Constraint>
+<Constraint table="32" name="PRIMARY" type="PrimKey">
+<ConstraintColumn id="33"/>
+</Constraint>
+<Sheet name="Biblioteca Laravel" id="43" disp_at="true" disp_ph="true" disp_co="true" disp_rn="true">
+<Place id="41" visible="true">500,0,0,0</Place>
+<Place id="24" visible="true">341,189,140,60</Place>
+<Place id="42" visible="true">500,0,0,0</Place>
+<Place id="8" visible="true">691,60,170,140</Place>
+<Place id="27" visible="true">451,20,150,90</Place>
+<Place id="20" visible="true">21,169,140,70</Place>
+<Place id="16" visible="true">21,19,140,70</Place>
+<Place id="38" visible="true">500,0,0,0</Place>
+<Place id="40" visible="true">500,0,0,0</Place>
+<Place id="0" visible="true">951,9,140,140</Place>
+<Place id="32" visible="true">201,19,130,90</Place>
+<Place id="39" visible="true">500,0,0,0</Place>
+<Place id="37" visible="true">500,0,0,0</Place>
+</Sheet>
+<Settings sheet="43" zoom="1.0"/>
+</Diagram>

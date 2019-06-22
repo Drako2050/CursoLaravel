@@ -1,0 +1,168 @@
+/*
+Script generado por Aqua Data Studio 17.0.1 en jun-22-2019 10:03:34 AM
+Base de datos: null
+Esquema: <Todos los esquemas>
+*/
+
+DROP INDEX "FK_USUARIO" ON libro_prestamo
+GO
+DROP INDEX "FK_LIBRO" ON libro_prestamo
+GO
+DROP INDEX "FK_PERMISO" ON permiso_rol
+GO
+DROP INDEX "FK_ROL" ON usuario_rol
+GO
+ALTER TABLE "libro_prestamo"
+	DROP FOREIGN KEY "REL_1"
+GO
+ALTER TABLE "permiso_rol"
+	DROP FOREIGN KEY "REL_6"
+GO
+ALTER TABLE "usuario_rol"
+	DROP FOREIGN KEY "REL_4"
+GO
+ALTER TABLE "permiso_rol"
+	DROP FOREIGN KEY "REL_5"
+GO
+ALTER TABLE "usuario_rol"
+	DROP FOREIGN KEY "REL_3"
+GO
+ALTER TABLE "libro_prestamo"
+	DROP FOREIGN KEY "REL_2"
+GO
+DROP TABLE "libro"
+GO
+DROP TABLE "libro_prestamo"
+GO
+DROP TABLE "permiso"
+GO
+DROP TABLE "permiso_rol"
+GO
+DROP TABLE "rol"
+GO
+DROP TABLE "usuario"
+GO
+DROP TABLE "usuario_rol"
+GO
+CREATE TABLE "libro"  ( 
+	"id"       	int(11) NOT NULL,
+	"titulo"   	varchar(100) NULL,
+	"isbn"     	varchar(30) NULL,
+	"autor"    	varchar(100) NULL,
+	"cantidad" 	tinyint(4) NULL,
+	"editorial"	varchar(50) NULL,
+	"foto"     	varchar(100) NULL,
+	PRIMARY KEY("id")
+)
+ENGINE = InnoDB
+AUTO_INCREMENT = 0
+GO
+CREATE TABLE "libro_prestamo"  ( 
+	"id"              	int(11) NOT NULL,
+	"usuario_id"      	int(11) NULL,
+	"libro_id"        	int(11) NULL,
+	"fecha_prestamo"  	date NULL,
+	"prestado_a"      	varchar(100) NULL,
+	"estado"          	tinyint(4) NULL,
+	"fecha_devolucion"	date NULL,
+	PRIMARY KEY("id")
+)
+ENGINE = InnoDB
+AUTO_INCREMENT = 0
+GO
+CREATE TABLE "permiso"  ( 
+	"id"    	int(11) COMMENT 'id primary'  NOT NULL,
+	"nombre"	varchar(50) NULL,
+	"slug"  	varchar(50) NULL,
+	PRIMARY KEY("id")
+)
+ENGINE = InnoDB
+AUTO_INCREMENT = 0
+GO
+CREATE TABLE "permiso_rol"  ( 
+	"id"        	int(11) NOT NULL,
+	"rol_id"    	int(11) NULL,
+	"permiso_id"	int(11) NULL,
+	PRIMARY KEY("id")
+)
+ENGINE = InnoDB
+AUTO_INCREMENT = 0
+GO
+CREATE TABLE "rol"  ( 
+	"id"    	int(11) NOT NULL,
+	"nombre"	varchar(50) NULL,
+	PRIMARY KEY("id")
+)
+ENGINE = InnoDB
+AUTO_INCREMENT = 0
+GO
+CREATE TABLE "usuario"  ( 
+	"id"      	int(11) NOT NULL,
+	"usuario" 	varchar(50) NULL,
+	"password"	varchar(50) NULL,
+	"nombre"  	varchar(50) NULL,
+	PRIMARY KEY("id")
+)
+ENGINE = InnoDB
+AUTO_INCREMENT = 0
+GO
+CREATE TABLE "usuario_rol"  ( 
+	"id"        	int(11) NOT NULL,
+	"rol_id"    	int(11) NULL,
+	"usuario_id"	int(11) NULL,
+	"estado"    	tinyint(4) NULL,
+	PRIMARY KEY("id")
+)
+ENGINE = InnoDB
+AUTO_INCREMENT = 0
+GO
+ALTER TABLE "libro_prestamo"
+	ADD CONSTRAINT "REL_1"
+	FOREIGN KEY("libro_id")
+	REFERENCES "libro"("id")
+	ON DELETE RESTRICT 
+	ON UPDATE RESTRICT 
+GO
+ALTER TABLE "permiso_rol"
+	ADD CONSTRAINT "REL_6"
+	FOREIGN KEY("permiso_id")
+	REFERENCES "permiso"("id")
+	ON DELETE RESTRICT 
+	ON UPDATE RESTRICT 
+GO
+ALTER TABLE "usuario_rol"
+	ADD CONSTRAINT "REL_4"
+	FOREIGN KEY("rol_id")
+	REFERENCES "rol"("id")
+	ON DELETE RESTRICT 
+	ON UPDATE RESTRICT 
+GO
+ALTER TABLE "permiso_rol"
+	ADD CONSTRAINT "REL_5"
+	FOREIGN KEY("rol_id")
+	REFERENCES "rol"("id")
+GO
+ALTER TABLE "usuario_rol"
+	ADD CONSTRAINT "REL_3"
+	FOREIGN KEY("usuario_id")
+	REFERENCES "usuario"("id")
+GO
+ALTER TABLE "libro_prestamo"
+	ADD CONSTRAINT "REL_2"
+	FOREIGN KEY("usuario_id")
+	REFERENCES "usuario"("id")
+	ON DELETE RESTRICT 
+	ON UPDATE RESTRICT 
+GO
+CREATE INDEX "FK_USUARIO" USING BTREE 
+	ON "libro_prestamo"("usuario_id")
+GO
+CREATE INDEX "FK_LIBRO" USING BTREE 
+	ON "libro_prestamo"("libro_id")
+GO
+CREATE INDEX "FK_PERMISO" USING BTREE 
+	ON "permiso_rol"("permiso_id")
+GO
+CREATE INDEX "FK_ROL" USING BTREE 
+	ON "usuario_rol"("rol_id")
+GO
