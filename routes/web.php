@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+}); */
+
+
+//Route::get('permiso', 'PermisoController@index');
+//Route::view('permiso', 'permiso');
+Route::get('permiso/{nombre}/{slug?}', 'PermisoController@index');

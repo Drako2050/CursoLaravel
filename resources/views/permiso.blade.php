@@ -1,0 +1,1 @@
+Sistema de Permisos Hola {{$nombre.' '}} {{$slug}}
